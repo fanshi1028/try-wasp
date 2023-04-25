@@ -49,7 +49,7 @@
       in {
         inherit overlay;
         packages = with pkgs; { inherit wasp; };
-        checks = self.packages;
+        checks = self.packages.${system};
         devShell = with pkgs; mkShell { buildInputs = [ wasp nodejs ]; };
       });
 }
